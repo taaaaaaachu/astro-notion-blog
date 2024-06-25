@@ -24,6 +24,7 @@ jobs:
           NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
           CUSTOM_DOMAIN: 'blog.example.com'
+          ENABLE_LIGHTBOX: true
 
   deploy:
     needs: build
