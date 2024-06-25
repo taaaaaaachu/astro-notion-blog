@@ -25,7 +25,10 @@ jobs:
         with:
           # path: . # リポジトリ内のAstroプロジェクトのルートロケーション。(オプション)
           node-version: 18.16.0 # サイト構築に使用するNodeのバージョン。デフォルトは18です。（オプション）
-        # package-manager: pnpm@latest # 依存関係のインストールとサイトのビルドに使用する Node パッケージマネージャ。ロックファイルに基づいて自動的に検出されます。(オプション)
+          # package-manager: pnpm@latest # 依存関係のインストールとサイトのビルドに使用する Node パッケージマネージャ。ロックファイルに基づいて自動的に検出されます。(オプション)
+        env:
+          NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
+          DATABASE_ID: ${{ secrets.DATABASE_ID }}
       - name: Create CNAME file
         run: echo 'blog.example.com' > ./public/CNAME
       - name: Upload artifact
