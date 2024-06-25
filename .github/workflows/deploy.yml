@@ -29,6 +29,7 @@ jobs:
         env:
           NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
+          CUSTOM_DOMAIN: blog.example.com
       - name: Create CNAME file
         run: echo 'blog.example.com' > ./public/CNAME
       - name: Upload artifact
